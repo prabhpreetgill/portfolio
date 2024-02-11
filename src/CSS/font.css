@@ -1,0 +1,21 @@
+@font-face {
+    font-family: __overusedgrotesk_e4adf4;
+    src: url(../Media/Fonts/1656e9bdc2587d30-s.p.woff2) format("woff2");
+    font-display: block;
+  }
+  @font-face {
+    font-family: __overusedgrotesk_Fallback_e4adf4;
+    src: local("Arial");
+    ascent-override: 106.08%;
+    descent-override: 23.31%;
+    line-gap-override: 9.53%;
+    size-adjust: 94.27%;
+  }
+  .__className_e4adf4 {
+    font-family: __overusedgrotesk_e4adf4, __overusedgrotesk_Fallback_e4adf4;
+  }
+  .__variable_e4adf4 {
+    --font-overusedgrotesk: "__overusedgrotesk_e4adf4",
+      "__overusedgrotesk_Fallback_e4adf4";
+  }
+  
