@@ -42,7 +42,7 @@ function Landing() {
   };
 
   return (
-    <section id="hero" className="mb-[-100svh py-0]">
+    <section id="home" className="mb-[-100svh py-0]">
     {NavigationMenu(offsetY >= halfwayPoint)}
       <div className="h-svh flex items-end sm:items-center section-padding sticky top-0">
         <svg
@@ -137,7 +137,7 @@ function Landing() {
               </span>
             </h1>
             <p className="font-medium text-secondary-100 max-w-[38ch] sm:text-center text-start text-base xl:text-h6 2xl:text-h5 pl-1 sm:pl-0 animate-bio">
-              Software Engineer
+              Software Engineer - Specializing in Artificial Intelligence and Machine Learning
             </p>
           </div>
         </div>

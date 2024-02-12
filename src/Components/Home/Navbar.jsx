@@ -1,22 +1,15 @@
-import React, { useCallback } from "react";
+import React from "react";
 import "../../App.css";
 import "../../CSS/font.css";
 import svg from "../../Media/Svg/bubbles.svg";
+import { Link } from "react-scroll"; // Import Link component from react-scroll
 
 function Navbar() {
-  const handleNavLinkClick = useCallback((event) => {
-    event.preventDefault();
-    const targetId = event.currentTarget.getAttribute("href").slice(1); // Remove '#' from href to get the ID
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      // Smoothly scroll to the element
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  }, []);
+  const scrollSettings = {
+    duration: 700,
+    spy: true,
+    smooth: true,
+  };
 
   return (
     <header
@@ -44,39 +37,43 @@ function Navbar() {
             Available for work May 2024
           </span>
           <div className="flex items-start flex-col gap-y-1">
-            {/* Update each link with onClick handler */}
-            <a
+            <Link
+              to="about"
               className="font-medium block relative overflow-hidden group h-fit leading-base link-text"
-              href="#about"
-              onClick={handleNavLinkClick}
+              style={{cursor: 'pointer'}}
+              {...scrollSettings}
             >
               <span className="link1">About</span>
               <span className="link2">About</span>
-            </a>
-            <a
+            </Link>
+            <Link
+              to="info"
               className="font-medium block relative overflow-hidden group h-fit leading-base link-text"
-              href="#info"
-              onClick={handleNavLinkClick}
+              {...scrollSettings}
+              style={{cursor: 'pointer'}}
             >
               <span className="link1">My Life</span>
               <span className="link2">My Life</span>
-            </a>
-            <a
+              
+            </Link>
+            <Link
+              to="projects"
               className="font-medium block relative overflow-hidden group h-fit leading-base link-text"
-              href="#projects"
-              onClick={handleNavLinkClick}
+              style={{cursor: 'pointer'}}
+              {...scrollSettings}
             >
               <span className="link1">Projects</span>
               <span className="link2">Projects</span>
-            </a>
-            <a
+            </Link>
+            <Link
+              to="contact"
               className="font-medium block relative overflow-hidden group h-fit leading-base link-text"
-              href="#contact"
-              onClick={handleNavLinkClick}
+              style={{cursor: 'pointer'}}
+              {...scrollSettings}
             >
               <span className="link1">Contact</span>
               <span className="link2">Contact</span>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

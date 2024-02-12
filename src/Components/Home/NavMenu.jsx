@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import menuSvg from "../../Media/Svg/menu.svg"; // Make sure the path is correct
 import "../../App.css";
+import { Link } from "react-scroll"; // Import Link component from react-scroll
 
 function NavigationMenu(half) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,15 +25,18 @@ function NavigationMenu(half) {
   // Define the navigation links
   const navLinks = [
     { href: "/", text: "Home" },
-    { href: "#about", text: "About" },
-    { href: "#info", text: "My Life" },
-    { href: "#projects", text: "Projects" },
-    { href: "#contact", text: "Contact" },
+    { href: "about", text: "About" },
+    { href: "info", text: "My Life" },
+    { href: "projects", text: "Projects" },
+    { href: "contact", text: "Contact" },
   ];
 
   // Define the social links
   const socialLinks = [
-    { href: "https://www.linkedin.com/in/prabhpreet-gill-sd/", text: "LinkedIn" },
+    {
+      href: "https://www.linkedin.com/in/prabhpreet-gill-sd/",
+      text: "LinkedIn",
+    },
     {
       href: "https://github.com/prabhpreetgill",
       text: "GitHub",
@@ -59,6 +63,12 @@ function NavigationMenu(half) {
     ? { transform: "rotate(-45deg) translateY(0)" }
     : { transform: "rotate(0) translateY(0.5rem)" };
 
+  const scrollSettings = {
+    duration: 700,
+    spy: true,
+    smooth: true,
+  };
+
   return (
     <div>
       <button
@@ -81,7 +91,9 @@ function NavigationMenu(half) {
       </button>
       <div
         ref={menuRef} // Apply ref to the menu container
-        className={`fixed z-50 flex h-screen w-screen pointer-events-none text-accent-200 ${isMenuOpen ? "navMenu-open" : "navMenu-close"}`}
+        className={`fixed z-50 flex h-screen w-screen pointer-events-none text-accent-200 ${
+          isMenuOpen ? "navMenu-open" : "navMenu-close"
+        }`}
         style={{ pointerEvents: isMenuOpen ? "auto" : "none" }} // Prevent clicks when menu is closed
       >
         <div
@@ -89,8 +101,10 @@ function NavigationMenu(half) {
           style={{ width: "inherit", opacity: 1 }}
         >
           <div
-            className="top-0 right-0 absolute navMenu-circle"
-            style={{ opacity: 0 }}
+            className={`top-0 right-0 absolute ${
+              isMenuOpen ? "navMenu-circle" : "navMenu-circle-close"
+            }`}
+            style={{ opacity: 0, visibility: "hidden" }}
           >
             <img
               alt="Menu Icon"
@@ -100,59 +114,61 @@ function NavigationMenu(half) {
               decoding="async"
               className="2xl:w-72 3xl:w-96"
               src={menuSvg}
-              style={{ color: "transparent" }}
             />
           </div>
           {/* Navigation Links */}
-          <nav className="flex flex-col justify-center px-8 sm:px-14 h-full text-h2 sm:text-h2 xl:text-h1 2xl:px-20 font-bold text-cream relative leading-base">
-            {navLinks.map((link, index) => (
-              <div
-                className="group flex w-fit cursor-pointer items-center gap-x-4"
-                style={{
-                  visibility: "hidden",
-                  animation: "letters 1s ease forwards",
-                  animationDelay: `${index * 0.3 + 0.5}s`,
-                }}
-              >
-                <span className="invisible inline-block h-3 w-3 rounded-full bg-accent-200 opacity-0 scale-0 transition-all group-hover:visible group-hover:opacity-100 group-hover:scale-100 ease-expo duration-700"></span>
-                <div className="w-fit overflow-hidden">
-                  <div style={{ transform: "none" }}>
-                    <a
-                      key={index}
-                      href={link.href}
+          {isMenuOpen && (
+            <nav className="flex flex-col justify-center px-8 sm:px-14 h-full text-h2 sm:text-h2 xl:text-h1 2xl:px-20 font-bold text-cream relative leading-base">
+              {navLinks.map((link, index) => (
+                <div
+                  className="group flex w-fit cursor-pointer items-center gap-x-4"
+                  style={{
+                    opacity: 0,
+                    animation: "letters 1s ease forwards",
+                    animationDelay: `${index * 0.05 + 0.5}s`,
+                  }}
+                >
+                  <span className="invisible inline-block h-3 w-3 rounded-full bg-accent-200 opacity-0 scale-0 transition-all group-hover:visible group-hover:opacity-100 group-hover:scale-100 ease-expo duration-700"></span>
+                  <div className="w-fit overflow-hidden">
+                    <Link
+                      to={link.href}
                       className={`mb-2 hover:text-accent-500 transition duration-300 ease-in-out`}
+                      style={{ cursor: "pointer" }}
+                      {...scrollSettings}
                     >
                       {link.text}
-                    </a>
+                    </Link>
                   </div>
                 </div>
-              </div>
-            ))}
-          </nav>
+              ))}
+            </nav>
+          )}
 
           {/* Social Links */}
-          <ul className="flex justify-end gap-x-8 px-14 text-accent-500">
-            {socialLinks.map((social, index) => (
-              <div
-                key={index}
-                style={{
-                  opacity: 0,
-                  animation: "fadeFull 0.2s ease forwards",
-                  animationDelay: `${0.1 * index + 0.5}s`,
-                }}
-              >
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium block relative overflow-hidden group h-fit leading-base link-text"
+          {isMenuOpen && (
+            <ul className="flex justify-end gap-x-8 px-14 text-accent-500">
+              {socialLinks.map((social, index) => (
+                <div
+                  key={index}
+                  style={{
+                    opacity: 0,
+                    animation: "fadeFull 0.5s ease forwards",
+                    animationDelay: `${0.3 * index + 0.5}s`,
+                  }}
                 >
-                  <span className="link1">{social.text}</span>
-                  <span className="link2">{social.text}</span>
-                </a>
-              </div>
-            ))}
-          </ul>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium block relative overflow-hidden group h-fit leading-base link-text"
+                  >
+                    <span className="link1">{social.text}</span>
+                    <span className="link2">{social.text}</span>
+                  </a>
+                </div>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>

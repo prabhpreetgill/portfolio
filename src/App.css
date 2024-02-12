@@ -3031,9 +3031,23 @@ textarea:focus {
   }
 }
 
-.navMenu-circle{
+@keyframes unFade {
+  from {
+    visibility: visible;
+    opacity: 0.25;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.navMenu-circle {
   animation: fade 0.5s ease-in forwards;
-  animation-delay: 0.4s;
+}
+
+.navMenu-circle-close {
+  animation: unFade 0.2s ease-in forwards;
 }
 
 @keyframes shrink {
@@ -3054,11 +3068,11 @@ textarea:focus {
   }
 }
 
-.shrink{
+.shrink {
   animation: grow 0.5s ease forwards;
 }
 
-.shrink:hover{
+.shrink:hover {
   animation: shrink 0.5s ease forwards;
 }
 
@@ -3070,5 +3084,26 @@ textarea:focus {
   to {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-section .project-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-section .project-grid .container {
+    /* Ensure full width for smaller screens */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Align text items to center, but keep h2 left-aligned */
+  .project-section .project-grid .container h3,
+  .project-section .project-grid .container div {
+    text-align: center;
   }
 }

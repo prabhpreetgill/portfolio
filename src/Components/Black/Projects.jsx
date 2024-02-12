@@ -9,13 +9,13 @@ import Fitness from '../../Media/Pictures/Fitness.png'
 function Projects() {
 
   return (
-    <section id="projects" className="bg-secondary-400 section-padding">
+<section id="projects" className="bg-secondary-400 section-padding project-section">
       <h2 className="relative text-accent-400 section-heading dark:text-accent-400 pb-8">
         <span aria-hidden="true">
           <AnimatedText text="Projects."/>
         </span>
       </h2>
-      <div class="grid grid-cols-1 gap-x-14 xl:gap-x-18 2xl:gap-x-20 3xl:gap-x-24 gap-y-10 md:gap-y-20 pb-20 md:grid-cols-12">
+      <div class="grid grid-cols-1 gap-x-14 xl:gap-x-18 2xl:gap-x-20 3xl:gap-x-24 gap-y-10 md:gap-y-20 pb-20 md:grid-cols-12 project-grid">
         <div className="work-0 container">
           <a
             className="group"
