@@ -76,8 +76,8 @@ function NavigationMenu(half) {
         aria-label="Menu Navigation Button"
         aria-expanded={isMenuOpen}
         aria-controls="menu"
-        class="z-[999] flex h-16 w-16 2xl:w-20 2xl:h-20 flex-col items-center justify-center rounded-full bg-accent-500 ease-expo hover:scale-90 fixed left-6 top-6 sm:left-8 sm:top-8 transition-all duration-1000 group scale-0 shrink"
-        style={buttonStyle}
+        class="flex h-16 w-16 2xl:w-20 2xl:h-20 flex-col items-center justify-center rounded-full bg-accent-500 ease-expo hover:scale-90 fixed left-6 top-6 sm:left-8 sm:top-8 transition-all duration-1000 group scale-0 shrink"
+        style={{...buttonStyle, zIndex: 150}}
         onClick={toggleMenu}
       >
         <span
