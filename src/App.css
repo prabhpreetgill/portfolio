@@ -2984,12 +2984,10 @@ textarea:focus {
 @keyframes letters {
   from {
     transform: translateY(100px);
-    visibility: hidden;
     opacity: 0;
   }
   to {
     transform: translateY(0%);
-    visibility: visible;
     opacity: 1;
   }
 }
@@ -3106,4 +3104,51 @@ textarea:focus {
   .project-section .project-grid .container div {
     text-align: center;
   }
+
+  .navMenu-open {
+    animation: open 0.5s ease-out forwards;
+  }
+
+  .justify-center-sm {
+    justify-content: center;
+  }
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.text-wrap-container {
+  display: block; /* or 'flex' if you need it, with 'flex-wrap: wrap;' for child elements */
+}
+
+.text-sm.flex.flex-wrap {
+  /* Ensures that the container allows for wrapping */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px; /* Adjust as needed */
 }

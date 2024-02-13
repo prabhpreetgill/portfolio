@@ -56,6 +56,37 @@ function Accord() {
     setIsOpen3(!isOpen3);
   };
 
+  const languages = [
+    "Java",
+    "Python",
+    "Javascript",
+    "Typescript",
+    "HTML/CSS",
+    "MySQL",
+    "MongoDB",
+    "Bash",
+  ];
+  const frameworks = [
+    "React",
+    "Nodejs",
+    "Expressjs",
+    "MUI",
+    "Bootstrap",
+    "Mongoose",
+    "NumPy",
+    "Pandas",
+    "Scikit-Learn",
+    "TensorFlow",
+  ];
+  const tools = [
+    "Git",
+    "GitHub",
+    "VS Code",
+    "Eclipse",
+    "IntelliJ",
+    "Unix Command Line",
+  ];
+
   return (
     <section
       id="info"
@@ -246,32 +277,32 @@ function Accord() {
               className={isOpen3 ? openTextStyle : closeTextStyle}
             >
               <div className="overflow-hidden">
-                <p className="pb-6 text-base xl:text-h6 2xl:text-h5 max-w-[54ch] font-medium">  
-                <strong className="block text-md">Languages:</strong>
-                    <p className="text-sm list-disc list-inside">
-                      Java&nbsp;&nbsp;&nbsp;&nbsp;Python&nbsp;&nbsp;&nbsp;&nbsp;Javascript
-                      &nbsp;&nbsp;&nbsp;&nbsp;Typescript&nbsp;&nbsp;&nbsp;&nbsp;HTML/CSS&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;
-                      MySQL&nbsp;&nbsp;&nbsp;&nbsp;MongoDB&nbsp;&nbsp;&nbsp;&nbsp;Bash
-                    </p>
-                </p>
-                <p className="pb-6 text-base xl:text-h6 2xl:text-h5 max-w-[54ch] font-medium">  
-                <strong className="block text-md">Frameworks:</strong>
-                    <p className="text-sm list-disc list-inside">
-                      ReactJs&nbsp;&nbsp;&nbsp;&nbsp;NodeJs&nbsp;&nbsp;&nbsp;&nbsp;ExpressJs
-                      &nbsp;&nbsp;&nbsp;&nbsp;Materials UI&nbsp;&nbsp;&nbsp;&nbsp;Bootstrap
-                      &nbsp;&nbsp;&nbsp;&nbsp;Mongoose&nbsp;&nbsp;&nbsp;&nbsp;NumPy
-                      &nbsp;&nbsp;&nbsp;&nbsp;Pandas&nbsp;&nbsp;&nbsp;&nbsp;Scikit-Learn
-                      &nbsp;&nbsp;&nbsp;&nbsp;TensorFlow
-                    </p>
-                </p>
-                <p className="pb-6 3xl:pb-9 text-base xl:text-h6 2xl:text-h5 max-w-[54ch] font-medium">  
-                <strong className="block text-md">Tools:</strong>
-                    <p className="text-sm list-disc list-inside">
-                      Git&nbsp;&nbsp;&nbsp;&nbsp;GitHub&nbsp;&nbsp;&nbsp;&nbsp;VS Code
-                      &nbsp;&nbsp;&nbsp;&nbsp;Eclipse&nbsp;&nbsp;&nbsp;&nbsp;IntelliJ
-                      &nbsp;&nbsp;&nbsp;&nbsp;Unix Command Line
-                    </p>
-                </p>
+                <div className="pb-6 text-base xl:text-h6 2xl:text-h5 max-w-[54ch] font-medium">
+                  <strong className="block text-md">Languages:</strong>
+                  <div className="text-sm flex flex-wrap center justify-center-sm">
+                    {" "}
+                    {/* Adjusted for wrapping */}
+                    {languages.map((element) => (
+                      <span className="px-3">{element}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="pb-6 text-base xl:text-h6 2xl:text-h5 max-w-[54ch] font-medium">
+                  <strong className="block text-md">Frameworks:</strong>
+                  <div className="text-sm flex flex-wrap center justify-center-sm">
+                    {frameworks.map((element) => (
+                      <span className="px-3">{element}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="pb-6 text-base xl:text-h6 2xl:text-h5 max-w-[54ch] font-medium">
+                  <strong className="block text-md">Tools:</strong>
+                  <div className="text-sm flex flex-wrap center justify-center-sm">
+                    {tools.map((element) => (
+                      <span className="px-3">{element}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

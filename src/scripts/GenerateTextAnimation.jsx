@@ -40,7 +40,7 @@ const AnimatedText = ({ text = "" }) => {
             animation: `letters 0.5s ease forwards ${index * 0.05 + 0.5}s`,
             opacity: 0
           }
-        : {};
+        : {opacity: 0};
 
       return (
         <span key={index} className="inline-block" style={style}>
