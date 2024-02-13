@@ -137,7 +137,7 @@ function Landing() {
               </span>
             </h1>
             <p className="font-medium text-secondary-100 max-w-[38ch] sm:text-center text-start text-base xl:text-h6 2xl:text-h5 pl-1 sm:pl-0 animate-bio">
-              Software Engineer - Specializing in Artificial Intelligence and Machine Learning
+              Software Engineer <br/> Specializing in Artificial Intelligence & Machine Learning
             </p>
           </div>
         </div>
