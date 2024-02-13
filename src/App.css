@@ -3112,6 +3112,15 @@ textarea:focus {
   .justify-center-sm {
     justify-content: center;
   }
+
+  .justify-right-sm {
+    justify-content: right;
+  }
+
+  .text-center-sm {
+    width: 90vw;
+    text-align: center;
+  }
 }
 
 .skills-container {

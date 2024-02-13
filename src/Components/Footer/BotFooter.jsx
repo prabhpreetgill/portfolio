@@ -14,11 +14,10 @@ function BotFooter() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-12 gap-x-10 mt-14 items-end">
-      <span className="order-last sm:order-first md:col-span-6 col-span-8 lg:col-span-6 font-bold leading-[85%] text-h3 sm:text-h1 lg:text-display-3 tracking-heading text-secondary-400">
-        © 2024 <br className="block" />
+      <span className="text-center-sm order-last sm:order-first md:col-span-6 col-span-8 lg:col-span-6 font-bold leading-[85%] text-h3 sm:text-h1 lg:text-display-3 tracking-heading text-secondary-400">
         PRABH GILL
       </span>
-      <div className="gap-x-3 md:col-span-3 col-span-4 mb-3 sm:mb-0 lg:col-span-3 flex flex-col link-text">
+      <div className="gap-x-3 md:col-span-3 col-span-4 mb-3 sm:mb-0 lg:col-span-3 flex flex-col link-text text-center-sm">
         <span className="font-bold uppercase">Toronto</span>
         <span className="font-medium text-secondary-100 uppercase">Canada</span>
       </div>
