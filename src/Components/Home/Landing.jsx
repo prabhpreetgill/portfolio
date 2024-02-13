@@ -43,7 +43,7 @@ function Landing() {
 
   return (
     <section id="home" className="mb-[-100svh py-0]">
-    {NavigationMenu(offsetY >= halfwayPoint)}
+    {/* {NavigationMenu(offsetY >= halfwayPoint)} */}
       <div className="h-svh flex items-end sm:items-center section-padding sticky top-0">
         <svg
           width="1186"

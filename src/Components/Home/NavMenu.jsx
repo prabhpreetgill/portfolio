@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import menuSvg from "../../Media/Svg/menu.svg"; // Make sure the path is correct
 import "../../App.css";
-import { Link } from "react-scroll"; // Import Link component from react-scroll
+import { Link } from "react-scroll";
 
 function NavigationMenu(half) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -117,7 +117,6 @@ function NavigationMenu(half) {
             />
           </div>
           {/* Navigation Links */}
-          {isMenuOpen && (
             <nav className="flex flex-col justify-center px-8 sm:px-14 h-full text-h2 sm:text-h2 xl:text-h1 2xl:px-20 font-bold text-cream relative leading-base">
               {navLinks.map((link, index) => (
                 <div
@@ -131,10 +130,10 @@ function NavigationMenu(half) {
                   <span className="invisible inline-block h-3 w-3 rounded-full bg-accent-200 opacity-0 scale-0 transition-all group-hover:visible group-hover:opacity-100 group-hover:scale-100 ease-expo duration-700"></span>
                   <div className="w-fit overflow-hidden">
                     <Link
-                      to={link.href}
                       className={`mb-2 hover:text-accent-500 transition duration-300 ease-in-out`}
                       style={{ cursor: "pointer" }}
                       {...scrollSettings}
+                      to={link.href}
                     >
                       {link.text}
                     </Link>
@@ -142,7 +141,6 @@ function NavigationMenu(half) {
                 </div>
               ))}
             </nav>
-          )}
 
           {/* Social Links */}
           {isMenuOpen && (

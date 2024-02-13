@@ -49,7 +49,7 @@ function About() {
           >
             {/* Placeholder for image since srcSet isn't directly usable in React without next/image */}
             <img
-              alt="Side profile of Huy Nguyen in a beige fleece jacket with foliage in the background"
+              alt="Personal portrait of Prabh Gill"
               loading="lazy"
               width="1536"
               height="2040"
