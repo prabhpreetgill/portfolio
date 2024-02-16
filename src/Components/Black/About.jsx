@@ -1,5 +1,5 @@
 import React from "react";
-import Mike from "../../Media/Pictures/MikeTyson.jpg";
+import Mike from "../../Media/Pictures/pic.jpg";
 import Parallax from "../../scripts/Parralax";
 import AnimatedText from "../../scripts/GenerateTextAnimation";
 
