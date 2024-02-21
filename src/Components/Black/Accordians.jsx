@@ -161,7 +161,7 @@ function Accord() {
                   <div>
                     <strong className="block text-md">Coursework:</strong>
                     <p className="text-sm list-disc list-inside">
-                      Artificial Ingelligence&nbsp;&nbsp;&nbsp;&nbsp;Machine
+                      Artificial Intelligence&nbsp;&nbsp;&nbsp;&nbsp;Machine
                       Learning and Pattern Recognition &nbsp;&nbsp;&nbsp;&nbsp;
                       Design Patterns
                       <br />
